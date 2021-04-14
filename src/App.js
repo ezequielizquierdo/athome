@@ -1,19 +1,15 @@
 import React from 'react'
-import NavBar from './components/NavBar'
-import CartWidget from './components/CartWidget'
+import './App.css';
+import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
     <div className="container">
-      <NavBar>
-      </NavBar>
-      <h1>atHome coming soon</h1>
-      
+      <NavBar></NavBar>
+      <ItemListContainer></ItemListContainer>
     </div>
   );
 }
 
 export default App;
-
-
-
