@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
-import Visualizer from './Visualizer';
-
+import Visualizer from "./Visualizer";
+import Counter from "../Counter/Counter";
 
 export default function ItemCount() {
   const [count, setCount] = useState(0);
@@ -23,15 +23,9 @@ export default function ItemCount() {
 
   return (
     <div className="counter">
-      <button onClick={incrementCount}>Incrementar</button>
-      
-      
-      <div>
-        <Visualizer number={count} />
-        {count < 3 ? (<ItemCount increment={incrementCount} decrement={decrementCount} />) : null}
-      </div>
-
-      <button onClick={decrementCount}>Decrementar</button>
+      <Visualizer count={count} />
+      <div>{count < 3 ? "Stock disponible" : "Ya no hay suficiente stock"}</div>
+      <Counter increment={incrementCount} decrement={decrementCount} />
     </div>
   );
 }

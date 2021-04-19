@@ -1,0 +1,11 @@
+.button_cointainer{
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+}
+
+.button_style{
+    color: black;
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}

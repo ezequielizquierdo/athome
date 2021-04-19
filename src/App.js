@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import NavBar from './app/components/NavBar/NavBar'
-import ItemListContainer from './app/components/ItemListContainer/ItemListContainer'
+import ItemListContainer from './app/components/CoverConteiner/Cover'
 import ItemCount from './app/components/ItemCount/ItemCount';
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
       <NavBar></NavBar>
       <ItemListContainer/>
       <ItemCount/>
-
     </div>
   );
 }
