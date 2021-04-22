@@ -1,5 +1,4 @@
 .cover_container{
-    background-color: brown;
-    height: 100%;
-    color: white;
+    display: flex;
+    height: 90vh;
 }

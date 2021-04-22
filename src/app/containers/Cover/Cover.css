@@ -1,5 +1,8 @@
-.cover_container{
-    background-color: brown;
-    height: 100%;
-    color: white;
+.cover{
+    background-image: url('https://cdn.shopify.com/s/files/1/0252/3122/8975/files/DSC_4547_1000x.jpg?v=1615823260');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px dotted grey;
+    width: 100%;
 }

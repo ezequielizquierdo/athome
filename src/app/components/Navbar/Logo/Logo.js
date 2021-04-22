@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "../../../../assets/athome_white.png";
+import logo from "../../../../assets/athome_black.png";
 import './Logo.css'
 
 export default function Logo() {
   return (
-    <div className="logo">
-      <img src={logo} alt='logo'></img>
+    <div className='container_logo'>
+      <img className='logo' src={logo} alt='logo'></img>
     </div>
   );
 }
