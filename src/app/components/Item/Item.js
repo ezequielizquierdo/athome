@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Item({post}) {
+export default function Item({products}) {
   return (
-    <li>Titulo: {post.title} Descripcion: {post.body}</li>
+    <li>{products.title}</li>
   )
 }

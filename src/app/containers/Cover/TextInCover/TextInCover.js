@@ -4,18 +4,16 @@ import styled from "styled-components";
 export default function TextInCover() {
   return (
     <CoverShadow>
-      <CoverTitle>ACOMODATE.</CoverTitle>
+      <Title>RELAX</Title>
+      <SubTitle>Work Comfortably</SubTitle>
     </CoverShadow>
   );
 }
 
-const CoverTitle = styled.h1`
+const Title = styled.h1`
   display: flex;
   align-items: center;
   color: white;
-  font-family: sans-serif;
-  font-weight: lighter;
-
 `;
 
 const CoverShadow = styled.div`
@@ -23,4 +21,15 @@ const CoverShadow = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+
 `
+
+const SubTitle = styled.h3`
+  display: flex;
+  align-items: center;
+  color: white;
+
+`;
