@@ -10,6 +10,7 @@ export default function TextInCover() {
   );
 }
 
+
 const Title = styled.h1`
   display: flex;
   align-items: center;

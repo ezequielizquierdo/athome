@@ -1,8 +1,12 @@
+function getProductById(idPost) {
+    return new Promise((resolve, reject) => {
+        fetch (`https://fakestoreapi.com/products/${idPost}`)
+      .then((res) => res.json())
+      .then((data) => resolve(data))
+      .catch(err => reject(err))
+    })
+}
 
-
-// function createCard(card){
-//     return new Promise ((resolve, reject)) => {
-//       fetch("https://api.mercadolibre.com/sites/MLA/search?q=escritorio&limit=10,")
-        
-//     }
-// }
+module.exports = {
+    getProductById,
+}

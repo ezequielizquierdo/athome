@@ -1,20 +1,21 @@
-import { List } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./ListContainer.css";
+import List from '../../components/List/List'
 
 export default function ListContainer() {
   const [products, setProducts] = useState([]);
 
-  setTimeout(
   useEffect(() => {
+    setTimeout(() => 
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
-  }, []), 2000);
+      .then((data) => setProducts(data))
+      .catch(err => console.log(err)), 2000)
+  }, []);
 
   return (
     <div className="list_container">
-      <List listprop={products} />
+      <List listProp={products} />
     </div>
   );
 }
