@@ -1,3 +1,4 @@
 .list_container{
-    height: 50vh;
+    display: flex;
+    flex-direction: row;
 }
