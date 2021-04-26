@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./ListContainer.css";
+import "./ItemListContainer.css";
 import List from '../../components/List/List'
 
-export default function ListContainer() {
+export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

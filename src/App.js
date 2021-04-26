@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./app/containers/Navbar/Navbar";
 import CoverContainer from "./app/containers/Cover/CoverContainer";
 import ItemCount from "./app/components/ItemCount/ItemCount";
-import ListContainer from "./app/containers/ListContainer/ListContainer";
+import ItemListContainer from "./app/containers/ItemListContainer/ItemListContainer";
 import ButtonBases from "./app/containers/Cover/TextInCover/ButtonBases";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <CoverContainer />
       <ButtonBases/>
-      <ListContainer />
+      <ItemListContainer/>
       <ItemCount />
     </div>
   );

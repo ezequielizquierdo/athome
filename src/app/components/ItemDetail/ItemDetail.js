@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Item({ products }) {
+export default function ItemDetail({ products }) {
   const classes = useStyles();
 
   return (
@@ -39,9 +39,7 @@ export default function Item({ products }) {
         </CardActionArea>
 
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
+          
           <Button size="small" color="primary">
             Learn More
           </Button>

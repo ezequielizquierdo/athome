@@ -1,7 +1,7 @@
 import React from "react";
-import Item from "../Item/Item";
 import "./List.css";
 import styled from "styled-components";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 export default function List({ listProp }) {
@@ -10,7 +10,7 @@ export default function List({ listProp }) {
       {
       listProp.map((products) => {
         return (
-        <Item key={products.id} products={products} />
+        <ItemDetail key={products.id} products={products} />
         )
       })
       }
