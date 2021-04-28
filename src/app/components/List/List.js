@@ -10,7 +10,7 @@ export default function List({ listProp }) {
       {
       listProp.map((products) => {
         return (
-        <ItemDetail key={products.id} products={products} />
+        <ItemDetail key={products.id} id={products.id} />
         )
       })
       }

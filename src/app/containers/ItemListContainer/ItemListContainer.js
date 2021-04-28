@@ -7,7 +7,7 @@ export default function ItemListContainer() {
 
   useEffect(() => {
     setTimeout(() => 
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://fakestoreapi.com/products/category/electronics")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch(err => console.log(err)), 2000)
