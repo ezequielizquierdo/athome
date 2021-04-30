@@ -1,16 +1,16 @@
 import React from "react";
-import "./List.css";
+import "./../Item/Item.css";
 import styled from "styled-components";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import Item from "../Item/Item";
 
 
-export default function List({ listProp }) {
+export default function ItemList({ listProp }) {
   return (
     <Frame>
       {
       listProp.map((products) => {
         return (
-        <ItemDetail key={products.id} id={products.id} />
+        <Item key={products.id} id={products.id} />
         )
       })
       }
@@ -26,5 +26,5 @@ const Frame = styled.ul`
   padding: 10px;
   background-color: whitesmoke;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 `;

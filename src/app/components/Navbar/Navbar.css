@@ -1,5 +1,5 @@
 .navbar_container{
     background-color: whitesmoke;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
