@@ -3,13 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Navbar from "./app/components/Navbar/Navbar";
 import HomePage from "./app/containers/homePage/HomePage";
-import Accesorios from "./app/containers/accesorios/Accesorios";
-import Escritorios from "./app/containers/escritorios/Escritorios";
-import Sillas from "./app/containers/sillas/Sillas";
-import Sillones from "./app/containers/sillones/Sillones";
 import MessageInNavbar from "./app/components/MessageInNavbar/MessageInNavbar";
 import ButtonsNav from "./app/components/ButtonsNav/ButtonsNav";
-import ItemDetail from "./app/components/ItemDetail/ItemDetail";
+import ItemDetail from "./app/components/ItemDetail/ItemDetail"
+import Categories from "./app/Categories/Categories";
 
 function App() {
   return (
@@ -25,25 +22,15 @@ function App() {
           <HomePage />
         </Route>
 
-        <Route exact path="/Accesorios">
-          <Accesorios />
-        </Route>
-
-        <Route exact path="/Escritorios">
-          <Escritorios />
-        </Route>
-
-        <Route exact path="/Escritorios/:itemId">
+        <Route exact path="/products/:id">
           <ItemDetail />
         </Route>
 
-        <Route exact path="/Sillas">
-          <Sillas />
+        <Route exact path="/categories/:category">
+          <Categories />
         </Route>
 
-        <Route exact path="/Sillones">
-          <Sillones />
-        </Route>
+      
       </Switch>
 
     </BrowserRouter>
