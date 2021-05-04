@@ -86,7 +86,7 @@ export default function ButtonBases() {
     <CategoryContainer className={classes.root}>
       
         <ButtonBase
-          onClick={() => history.push('/escritorios')}
+          onClick={() => history.push('/categories/escritorios')}
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
@@ -115,7 +115,7 @@ export default function ButtonBases() {
         </ButtonBase>
       
         <ButtonBase
-          onClick={() => history.push('/sillas')}
+          onClick={() => history.push('/categories/sillas')}
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
@@ -144,7 +144,7 @@ export default function ButtonBases() {
         </ButtonBase>
 
         <ButtonBase
-          onClick={() => history.push('/sillones')}
+          onClick={() => history.push('/categories/sillones')}
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
@@ -173,7 +173,7 @@ export default function ButtonBases() {
         </ButtonBase>
 
         <ButtonBase
-          onClick={() => history.push('/accesorios')}
+          onClick={() => history.push('/categories/accesorios')}
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
