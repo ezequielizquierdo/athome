@@ -17,8 +17,8 @@ export default class Counter extends React.Component {
   render(){
     return(
       <div className='button_cointainer'>
-        <button className='button_style' onClick={this.props.increment}>Incrementar</button>
-        <button className='button_style' onClick={this.props.decrement}>Decrementar</button>
+        <button className='button_style' onClick={this.props.increment}>+</button>
+        <button className='button_style' onClick={this.props.decrement}>-</button>
       </div> 
     )
   }
