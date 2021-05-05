@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 269,
   },
   media: {
     height: '45vh',

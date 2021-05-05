@@ -5,16 +5,16 @@ import Navbar from "./app/components/Navbar/Navbar";
 import HomePage from "./app/containers/homePage/HomePage";
 import MessageInNavbar from "./app/components/MessageInNavbar/MessageInNavbar";
 import ButtonsNav from "./app/components/ButtonsNav/ButtonsNav";
-import ItemDetail from "./app/components/ItemDetail/ItemDetail"
+import ItemDetail from "./app/components/ItemDetail/ItemDetail";
 import Categories from "./app/Categories/Categories";
+import CartPage from "./app/containers/CartPage/CartPage";
 
 function App() {
   return (
     <BrowserRouter>
-
       <MessageInNavbar />
       <Navbar />
-      
+
       <ButtonsNav />
 
       <Switch>
@@ -30,9 +30,11 @@ function App() {
           <Categories />
         </Route>
 
-      
-      </Switch>
+        <Route path="/cart">
+          <CartPage/>
+        </Route>
 
+      </Switch>
     </BrowserRouter>
   );
 }

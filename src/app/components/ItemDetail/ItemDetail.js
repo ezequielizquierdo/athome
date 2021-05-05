@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core";
-import Counter from "../Counter/Counter";
 import ItemCount from "../ItemCount/ItemCount";
 
 // import { makeStyles } from "@material-ui/core/styles";
@@ -18,11 +17,21 @@ const useStyles = makeStyles({
 export default function ItemDetail() {
   const classes = useStyles();
   const { id } = useParams();
+  const [show, setShow] = useState(true);
   const [product, setProduct] = useState({
     title: "",
     price: "",
     description: "",
   });
+  const history = useHistory();
+
+
+  function onAdd (){
+    setShow({
+      hidden: true
+    });
+  }
+
 
   useEffect(() => {
     getProductById(id)
@@ -47,9 +56,12 @@ export default function ItemDetail() {
           <Title>{product.title} </Title>
           <Price>$ {product.price} </Price>
           <Description>{product.description}</Description>
-          <ItemCount></ItemCount>
-          <Counter></Counter>
+        
+        <ItemCount finishing={onAdd}></ItemCount>
+        <button hidden={!show.hidden} id="button-finishing" type="button" className="btn btn-warning" onClick={() => history.push(`/cart`)}>Terminar mi compra</button>
+        
         </DetailContainer>
+
 
       </Container>
     </div>

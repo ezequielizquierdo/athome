@@ -1,9 +1,8 @@
+import { Button } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
-import Visualizer from "./Visualizer";
-import Counter from "../Counter/Counter";
 
-export default function ItemCount() {
+export default function ItemCount({ finishing }) {
   const [count, setCount] = useState(0);
 
   useEffect(
@@ -21,11 +20,45 @@ export default function ItemCount() {
     setCount(count - 1);
   }
 
+  function addtoCart() {
+    finishing(count);
+  }
+
   return (
     <div className="counter">
-      <Visualizer count={count} />
-      <div>{count < 3 ? "Stock disponible" : "Ya no hay suficiente stock"}</div>
-      <Counter increment={incrementCount} decrement={decrementCount} />
+
+      <div className="counter-body">
+        {count > 0 ? (
+          <Button onClick={decrementCount} className="button-counter">
+            -
+          </Button>
+        ) : (
+          <Button onClick={decrementCount} className="button-counter" disabled>
+            -
+          </Button>
+        )}
+        <p className="visual align-self-center">{count}</p>
+        {count < 8 ? (
+          <Button onClick={incrementCount} className="button-counter">
+            +
+          </Button>
+        ) : (
+          <Button onClick={incrementCount} className="button-counter" disabled>
+            +
+          </Button>
+        )}
+      </div>
+      <div className="card-body text-center">
+        {count > 0 ? (
+          <Button onClick={addtoCart} className="btn btn-success">
+            Agregar al carrito
+          </Button>
+        ) : (
+          <Button onClick={addtoCart} className="btn btn-success" disabled>
+            Agregar al carrito
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

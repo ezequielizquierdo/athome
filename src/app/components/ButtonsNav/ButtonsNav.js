@@ -10,8 +10,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    height: '4vh',
     backgroundColor: '#f5f5f5',
+    borderBottom:"1px solid lightgrey",
+    height: '6vh',
     
   },
 
@@ -28,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
     width: `100%`,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-  }
+  },
+
 
 }));
 
