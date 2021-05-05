@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
-import ItemList from "../ItemList/ItemList";
+import ItemList from "../../components/ItemList/ItemList";
 import { useHistory } from "react-router";
 import { getProducts } from "../../../Services/post_services";
 
@@ -14,7 +14,8 @@ export default function ItemListContainer(props) {
   }
 
   useEffect(() => {
-    getProducts().then((products) => setProducts(products));
+    getProducts()
+    .then((products) => setProducts(products));
   }, []);
 
   return (

@@ -1,12 +1,9 @@
-import { useHistory, useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core";
 import ItemCount from "../ItemCount/ItemCount";
 
-// import { makeStyles } from "@material-ui/core/styles";
-
-const { getProductById } = require("../../../Services/post_services");
 
 const useStyles = makeStyles({
   img: {
@@ -14,15 +11,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ItemDetail() {
+export default function ItemDetail({product}) {
   const classes = useStyles();
-  const { id } = useParams();
   const [show, setShow] = useState(true);
-  const [product, setProduct] = useState({
-    title: "",
-    price: "",
-    description: "",
-  });
+ 
   const history = useHistory();
 
 
@@ -32,15 +24,8 @@ export default function ItemDetail() {
     });
   }
 
-
-  useEffect(() => {
-    getProductById(id)
-      .then((res) => setProduct(res))
-      .catch((err) => console.log(err));
-  }, [id]);
-
   return (
-    <div>
+    <>
       <Container>
         <ContainerImg>
           <Img>
@@ -62,9 +47,8 @@ export default function ItemDetail() {
         
         </DetailContainer>
 
-
       </Container>
-    </div>
+    </>
   );
 }
 
@@ -109,8 +93,9 @@ const Description = styled.div`
   font-weight: 100;
   font-size: 1rem;
   text-align:justify;
-  white-space: pre-wrap
+  white-space: pre-wrap;
 `;
+
 const Img = styled.div`
   width: 100%;
 `;

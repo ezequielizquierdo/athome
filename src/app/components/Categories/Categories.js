@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router'
-import { getProductByCategory } from '../../Services/post_services';
-import ItemList from '../components/ItemList/ItemList';
+import { getProductByCategory } from '../../../Services/post_services';
+import ItemList from '../ItemList/ItemList';
 
 export default function Categories() {
     const {category} = useParams();

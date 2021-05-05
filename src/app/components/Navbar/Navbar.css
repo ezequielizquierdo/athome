@@ -1,5 +1,10 @@
 .navbar_container{
     background-color: whitesmoke;
     display: flex;
+    flex-direction: column;
+  }
+
+  .block{
+    display: flex;
     justify-content: space-between;
   }

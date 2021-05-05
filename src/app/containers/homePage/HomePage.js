@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonBases from "../../components/ButtonBases/ButtonBases";
 import MessageAtCenter from "../../components/MessageAtCenter/MessageAtCenter";
-import CoverContainer from "../../components/CoverContainer//CoverContainer"
+import CoverContainer from "../CoverContainer/CoverContainer"
 import './HomePage.css'
 
 export default function HomePage() {

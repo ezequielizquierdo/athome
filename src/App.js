@@ -3,19 +3,15 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Navbar from "./app/components/Navbar/Navbar";
 import HomePage from "./app/containers/homePage/HomePage";
-import MessageInNavbar from "./app/components/MessageInNavbar/MessageInNavbar";
-import ButtonsNav from "./app/components/ButtonsNav/ButtonsNav";
-import ItemDetail from "./app/components/ItemDetail/ItemDetail";
-import Categories from "./app/Categories/Categories";
+import Categories from "./app/components/Categories/Categories";
 import CartPage from "./app/containers/CartPage/CartPage";
+import ItemDetailContainer from "./app/containers/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
     <BrowserRouter>
-      <MessageInNavbar />
-      <Navbar />
 
-      <ButtonsNav />
+      <Navbar />
 
       <Switch>
         <Route exact path="/">
@@ -23,7 +19,7 @@ function App() {
         </Route>
 
         <Route exact path="/products/:id">
-          <ItemDetail />
+          <ItemDetailContainer />
         </Route>
 
         <Route exact path="/categories/:category">
