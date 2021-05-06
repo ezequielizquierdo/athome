@@ -5,7 +5,7 @@ export function getProductById(id) {
         
       .then((res) => res.json())
       .then((data) => resolve(data))
-      .catch(err => reject(err)), 500)
+      .catch(err => reject(err)), 200)
     })
 }
 
@@ -16,7 +16,7 @@ export function getProductByCategory(category) {
         fetch (`http://my-json-server.typicode.com/ezequielizquierdo/mockjson/products?category=${category}`)
       .then((res) => res.json())
       .then((data) => resolve(data))
-      .catch(err => reject(err)), 500)
+      .catch(err => reject(err)), 200)
     })
 }
 
@@ -26,6 +26,6 @@ export function getProducts() {
       fetch (`http://my-json-server.typicode.com/ezequielizquierdo/mockjson/products`)
     .then((res) => res.json())
     .then((data) => resolve(data))
-    .catch(err => reject(err)), 500)
+    .catch(err => reject(err)), 200)
   })
 }

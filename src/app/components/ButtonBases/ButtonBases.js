@@ -83,6 +83,8 @@ export default function ButtonBases() {
   let history = useHistory();
 
   return (
+    <>
+
     <CategoryContainer className={classes.root}>
       
         <ButtonBase
@@ -144,7 +146,7 @@ export default function ButtonBases() {
         </ButtonBase>
 
         <ButtonBase
-          onClick={() => history.push('/categories/sillones')}
+          onClick={() => history.push('/sillones')}
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
@@ -173,7 +175,7 @@ export default function ButtonBases() {
         </ButtonBase>
 
         <ButtonBase
-          onClick={() => history.push('/categories/accesorios')}
+          onClick={() => history.push('/accesorios')}
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
@@ -201,6 +203,41 @@ export default function ButtonBases() {
           </span>
         </ButtonBase>
     </CategoryContainer>
+
+
+    <ButtonBase
+          onClick={() => history.push('/products')}
+          focusRipple
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            width:'100%',
+            height:'20vh',
+          }}
+        >
+          <span
+            className={classes.imageSrc}
+            style={{
+              // backgroundImage: `url(https://cdn.shopify.com/s/files/1/0252/3122/8975/products/DSC_4545-2_1400x.jpg?v=1615838612)`,
+            }}
+          />
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classes.imageTitle}
+            >
+              Todos los productos
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+
+
+
+    </>
   );
 }
 

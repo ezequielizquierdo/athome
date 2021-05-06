@@ -48,8 +48,8 @@ export default function ButtonsNav() {
       >
         <Button onClick={() => history.push('/categories/escritorios')} className={classes.button}>Escritorios</Button>
         <Button onClick={() => history.push('/categories/sillas')} className={classes.button}>Sillas</Button>
-        <Button onClick={() => history.push('/categories/sillones')} className={classes.button}>Sillones</Button>
-        <Button onClick={() => history.push('/categories/accesorios')} className={classes.button}>Accesorios</Button>
+        <Button onClick={() => history.push('/sillones')} className={classes.button}>Sillones</Button>
+        <Button onClick={() => history.push('/accesorios')} className={classes.button}>Accesorios</Button>
 
       </ButtonGroup>
     </div>

@@ -6,6 +6,9 @@ import HomePage from "./app/containers/homePage/HomePage";
 import Categories from "./app/components/Categories/Categories";
 import CartPage from "./app/containers/CartPage/CartPage";
 import ItemDetailContainer from "./app/containers/ItemDetailContainer/ItemDetailContainer";
+import Footer from "./app/components/Footer/Footer";
+import ItemListContainer from "./app/containers/ItemListContainer/ItemListContainer";
+import Comingsoon from "./app/components/Comingsoon/Comingsoon";
 
 function App() {
   return (
@@ -22,8 +25,20 @@ function App() {
           <ItemDetailContainer />
         </Route>
 
+        <Route exact path="/products">
+          <ItemListContainer />
+        </Route>
+
         <Route exact path="/categories/:category">
           <Categories />
+        </Route>
+
+        <Route exact path="/sillones">
+          <Comingsoon />
+        </Route>
+
+        <Route exact path="/accesorios">
+          <Comingsoon />
         </Route>
 
         <Route path="/cart">
@@ -31,6 +46,8 @@ function App() {
         </Route>
 
       </Switch>
+
+      <Footer/>
     </BrowserRouter>
   );
 }

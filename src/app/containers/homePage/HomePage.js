@@ -9,7 +9,7 @@ export default function HomePage() {
     <div>
       <CoverContainer/>
       <MessageAtCenter/>
-      <ButtonBases/>
+      <ButtonBases />
     </div>
   );
 }

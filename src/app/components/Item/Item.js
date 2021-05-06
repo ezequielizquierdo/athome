@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 export default function Item({ product, handleClick }) {
   const classes = useStyles();
 
-  return (
+  return ( 
     <Li>
       <Card onClick={() => handleClick(product)} className={classes.root}>
         <CardActionArea>

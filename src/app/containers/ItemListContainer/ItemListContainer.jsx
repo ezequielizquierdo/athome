@@ -4,13 +4,13 @@ import ItemList from "../../components/ItemList/ItemList";
 import { useHistory } from "react-router";
 import { getProducts } from "../../../Services/post_services";
 
-export default function ItemListContainer(props) {
+export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
 
   const history = useHistory();
 
   function onHandleClick(product) {
-    history.push(`/Escritorios/${product.id}`);
+    history.push(`/products/${product.id}`);
   }
 
   useEffect(() => {

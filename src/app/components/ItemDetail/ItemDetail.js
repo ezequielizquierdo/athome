@@ -26,7 +26,7 @@ export default function ItemDetail({product}) {
 
   return (
     <>
-      <Container>
+      <Container animate__fadeInUp>
         <ContainerImg>
           <Img>
             <img

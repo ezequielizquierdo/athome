@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function Footer() {
+
   return (
     <div>
       <TextInFooter>Copiright 2021 - Proyecto atHome - ReactJS</TextInFooter>
@@ -19,3 +20,4 @@ const TextInFooter = styled.div`
   align-items: center;
   font-style: italic;
 `;
+
