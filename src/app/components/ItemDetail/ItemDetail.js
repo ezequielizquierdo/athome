@@ -1,27 +1,47 @@
 import { useHistory } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core";
 import ItemCount from "../ItemCount/ItemCount";
+import { CartContext } from "../../Context/CartContext";
 
-
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
   img: {
     width: "100%",
   },
-});
+}); 
 
-export default function ItemDetail({product}) {
-  const classes = useStyles();
+export default function ItemDetail({ product }) {
+  const { addToCart } = useContext(CartContext);
   const [show, setShow] = useState(true);
- 
+  let cantidadCompra;
+
+  const classes = useStyles();
+
   const history = useHistory();
 
-
-  function onAdd (){
+  function onAdd(cantidad) {
     setShow({
-      hidden: true
+      hidden: true,
     });
+    cantidadCompra = cantidad;
+    console.log(cantidadCompra);
+
+    productSelected();
+  }
+
+  function productSelected() {
+    const newItem = {
+      id: product.id,
+      category: product.category,
+      title: product.title,
+      price: product.price,
+      cantidad: cantidadCompra,
+      description: product.description,
+      image: product.image,
+    };
+    console.log(newItem);
+    addToCart(newItem);
   }
 
   return (
@@ -41,12 +61,18 @@ export default function ItemDetail({product}) {
           <Title>{product.title} </Title>
           <Price>$ {product.price} </Price>
           <Description>{product.description}</Description>
-        
-        <ItemCount finishing={onAdd}></ItemCount>
-        <button hidden={!show.hidden} id="button-finishing" type="button" className="btn btn-warning" onClick={() => history.push(`/cart`)}>Terminar mi compra</button>
-        
-        </DetailContainer>
 
+          <ItemCount finishing={onAdd}></ItemCount>
+          <button
+            hidden={!show.hidden}
+            id="button-finishing"
+            type="button"
+            className="btn btn-warning"
+            onClick={() => history.push(`/cart`)}
+          >
+            Terminar mi compra
+          </button>
+        </DetailContainer>
       </Container>
     </>
   );
@@ -92,7 +118,7 @@ const Description = styled.div`
   padding-left: 20px;
   font-weight: 100;
   font-size: 1rem;
-  text-align:justify;
+  text-align: justify;
   white-space: pre-wrap;
 `;
 

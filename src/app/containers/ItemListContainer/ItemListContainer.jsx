@@ -4,6 +4,8 @@ import ItemList from "../../components/ItemList/ItemList";
 import { useHistory } from "react-router";
 import { getProducts } from "../../../Services/post_services";
 
+
+
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
 
@@ -14,8 +16,7 @@ export default function ItemListContainer() {
   }
 
   useEffect(() => {
-    getProducts()
-    .then((products) => setProducts(products));
+    getProducts().then((products) => setProducts(products));
   }, []);
 
   return (
@@ -26,3 +27,5 @@ export default function ItemListContainer() {
     </>
   );
 }
+
+

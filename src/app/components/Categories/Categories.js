@@ -1,25 +1,41 @@
-import React, { useState, useEffect } from 'react'
-import { useHistory, useParams } from 'react-router'
-import { getProductByCategory } from '../../../Services/post_services';
-import ItemList from '../ItemList/ItemList';
+import React, { useState, useEffect } from "react";
+import { useHistory, useParams } from "react-router";
+import { getProductByCategory } from "../../../Services/post_services";
+import ItemList from "../ItemList/ItemList";
+import styled from "styled-components";
+
 
 export default function Categories() {
-    const {category} = useParams();
-    const [products, setProducts] = useState([]);
-    
-    const history = useHistory();
+  const { category } = useParams();
+  const [products, setProducts] = useState([]);
 
-    function onHandleClick(product) {
-      history.push(`/products/${product.id}`);
-    }
-  
-    useEffect(() => {
-        getProductByCategory(category)
-        .then((products) => setProducts(products))
-    }, [category]);
+  const history = useHistory();
+
+  function onHandleClick(product) {
+    history.push(`/products/${product.id}`);
+  }
+
+  useEffect(() => {
+    getProductByCategory(category).then((products) => setProducts(products));
+  }, [category]);
   return (
-    <div className="list_container">
-        <ItemList handleClick={onHandleClick} listProp={products} />
-      </div>
+    <ListContainer>
+      <CategoryTitle style={{ textTransform: 'uppercase'}}>{category}</CategoryTitle>
+      <ItemList handleClick={onHandleClick} listProp={products} />
+    </ListContainer>
   );
 }
+
+const CategoryTitle = styled.div`
+  height: 10vh;
+  display: flex;
+border-bottom: 0.5px solid lightgray;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+`;
+
+const ListContainer = styled.div`
+display:flex;
+flex-direction:column;
+`
