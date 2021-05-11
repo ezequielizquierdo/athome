@@ -4,8 +4,17 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import CartList from "../../components/CartList/CartList";
 import styled from "styled-components";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+  },
+}));
 
 export default function CartPageContainer() {
+  const classes = useStyles();
   const { cart, setCart } = useContext(CartContext);
   console.log(cart); //para test
 
@@ -22,11 +31,28 @@ export default function CartPageContainer() {
         <CartList list={cart} onRemove={handleRemove} />
       </div>
       <div>
-        <button type="button" className="btn btn-warning">
-          <Link to={`/products`} className="link-text">
-            Continuar comprando
-          </Link>
-        </button>
+        <ButtonContainer>
+          <Button
+            variant="contained"
+            color="default"
+            className={classes.button}
+          >
+            <Link to={`/products`} className="link-text">
+              Continuar comprando
+            </Link>
+          </Button>
+
+          <div>
+            <Button
+              variant="contained"
+              size="medium"
+              color="primary"
+              className={classes.margin}
+            >
+              Finalizar compra
+            </Button>
+          </div>
+        </ButtonContainer>
       </div>
     </div>
   );
@@ -39,4 +65,12 @@ const CategoryTitle = styled.div`
   background-color: whitesmoke;
   justify-content: center;
   align-items: center;
+`;
+
+const ButtonContainer = styled.div`
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  background-color:whitesmoke;
 `;

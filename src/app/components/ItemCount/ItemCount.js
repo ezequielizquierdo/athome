@@ -1,9 +1,18 @@
-import { Button } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
+
+
+
 export default function ItemCount({ finishing }) {
   const [count, setCount] = useState(0);
+  const classes = useStyles();
 
   useEffect(
     function () {
@@ -48,13 +57,14 @@ export default function ItemCount({ finishing }) {
           </Button>
         )}
       </div>
+      
       <div className="card-body text-center">
         {count > 0 ? (
-          <Button onClick={addtoCart} className="btn btn-success">
+          <Button onClick={addtoCart} className={classes.button} variant="contained" color="default">
             Agregar al carrito
           </Button>
         ) : (
-          <Button onClick={addtoCart} className="btn btn-success" disabled>
+          <Button onClick={addtoCart} className={classes.button} variant="contained" color="secondary" disabled>
             Agregar al carrito
           </Button>
         )}

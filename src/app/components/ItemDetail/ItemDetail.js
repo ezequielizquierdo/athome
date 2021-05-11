@@ -5,11 +5,20 @@ import { makeStyles } from "@material-ui/core";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../Context/CartContext";
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
   img: {
     width: "100%",
   },
-}); 
+  oculto: {
+    padding: "10px",
+    backgroundColor: "#f08080",
+    borderRadius: "8px",
+    border: "0.1px solid #d3d3d3",
+    boxShadow: "0px 3px 1px -2px rgb(0 0 0 / 20%)",
+    width: "12vw",
+    color:"#ffffff"
+  },
+});
 
 export default function ItemDetail({ product }) {
   const { addToCart } = useContext(CartContext);
@@ -63,15 +72,18 @@ export default function ItemDetail({ product }) {
           <Description>{product.description}</Description>
 
           <ItemCount finishing={onAdd}></ItemCount>
-          <button
-            hidden={!show.hidden}
-            id="button-finishing"
-            type="button"
-            className="btn btn-warning"
-            onClick={() => history.push(`/cart`)}
-          >
-            Terminar mi compra
-          </button>
+          <BtnHidden>
+            <button
+              className={classes.oculto}
+              hidden={!show.hidden}
+              id="button-finishing"
+              type="button"
+              variant="outlined"
+              onClick={() => history.push(`/cart`)}
+            >
+              TERMINAR COMPRA
+            </button>
+          </BtnHidden>
         </DetailContainer>
       </Container>
     </>
@@ -124,4 +136,9 @@ const Description = styled.div`
 
 const Img = styled.div`
   width: 100%;
+`;
+
+const BtnHidden = styled.div`
+  display: flex;
+  justify-content: center;
 `;

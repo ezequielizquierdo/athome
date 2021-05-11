@@ -18,6 +18,7 @@ const useStyles = makeStyles({
   },
   container: {
     padding: 20,
+    backgroundColor:"#f5f5f5",
   },
   alignRight: {
     textAlign: "center",
