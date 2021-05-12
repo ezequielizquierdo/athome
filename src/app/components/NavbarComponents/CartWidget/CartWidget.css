@@ -4,3 +4,22 @@
     justify-content: center;
     padding: 10px;
 }
+
+.navbar-cart{
+    position: relative;
+    margin-right: 2rem;
+    padding: 0.5rem;
+}
+
+.total-items{
+    padding: 0.1rem 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;
+    background-color: rgb(201, 105, 105);
+    color: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px lightgray;
+    top: 0;
+    right: 0;
+}

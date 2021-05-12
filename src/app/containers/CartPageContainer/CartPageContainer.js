@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./CartPageContainer.css";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import CartList from "../../components/CartList/CartList";
 import styled from "styled-components";
@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
 export default function CartPageContainer() {
   const classes = useStyles();
   const { cart, setCart } = useContext(CartContext);
+  let history = useHistory();
+
   console.log(cart); //para test
 
   function handleRemove(id) {
@@ -33,13 +35,11 @@ export default function CartPageContainer() {
       <div>
         <ButtonContainer>
           <Button
-            variant="contained"
-            color="default"
+            color="#000000"
             className={classes.button}
+            onClick={() => history.push(`/products`)}
           >
-            <Link to={`/products`} className="link-text">
               Continuar comprando
-            </Link>
           </Button>
 
           <div>
@@ -47,6 +47,7 @@ export default function CartPageContainer() {
               variant="contained"
               size="medium"
               color="primary"
+              backgroundColor="#20b2aa"
               className={classes.margin}
             >
               Finalizar compra
@@ -65,12 +66,15 @@ const CategoryTitle = styled.div`
   background-color: whitesmoke;
   justify-content: center;
   align-items: center;
+  
+
 `;
 
 const ButtonContainer = styled.div`
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding: 20px;
   background-color:whitesmoke;
+  justify-content:flex-end;
 `;

@@ -1,18 +1,26 @@
-import React from 'react'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import './CartWidget.css'
-import { useHistory } from 'react-router';
-import { Button } from '@material-ui/core';
-
+import React, { useContext } from "react";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import "./CartWidget.css";
+import { CartContext } from "../../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function CartWidget() {
-    let history = useHistory();
-    return (
-        <div className='cart_icon_container'>
-            <Button
-            onClick={() => history.push('/cart')} >
-            <ShoppingCartIcon className='cart_icon'/>
-            </Button>
-        </div>
-    )
+  const { cart, totalItems } = useContext(CartContext);
+
+  return (
+    <div className="cart_icon_container">
+      {cart.length === 0 ? (
+        <Link to={`/cart`}>
+          <ShoppingCartIcon className="cart-icon" alt="Cart" loading="lazy" />
+        </Link>
+      ) : (
+        <Link to={`/cart`}>
+          <ShoppingCartIcon className="cart-icon" alt="Cart" loading="lazy" />
+          {totalItems ? (
+            <span className="total-items">{totalItems}</span>
+          ) : null}
+        </Link>
+      )}
+    </div>
+  );
 }
