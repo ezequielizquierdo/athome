@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 export default function ItemDetail({ product }) {
   const { addToCart } = useContext(CartContext);
   const [show, setShow] = useState(true);
+
   let cantidadCompra;
 
   const classes = useStyles();

@@ -2,8 +2,8 @@ import {useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import getProducts from "../../../Services/post_services";
 
-const { getProductById } = require("../../../Services/post_services");
 
 
 export default function ItemDetailContainer() {
@@ -15,7 +15,7 @@ export default function ItemDetailContainer() {
   });
 
   useEffect(() => {
-    getProductById(id)
+    getProducts(id)
       .then((res) => setProduct(res))
       .catch((err) => console.log(err));
   }, [id]);

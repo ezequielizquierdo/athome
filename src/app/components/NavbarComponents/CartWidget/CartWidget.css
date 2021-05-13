@@ -23,3 +23,10 @@
     top: 0;
     right: 0;
 }
+
+.cart_icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
