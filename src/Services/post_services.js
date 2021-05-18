@@ -1,74 +1,53 @@
 import { database } from "../firebase";
-
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 // OBTENER TODOS LOS PRODUCTOS
+const productCollection = database.collection("products");
+const orderCollection = database.collection("order");
 
-function getProducts() {
-  const productCollection = database.collection("products");
 
-  return productCollection
-  .get()
-  .then(snapshot => {
-    return snapshot.docs.map(doc => {
-      let product = doc.data()
-        return {
-          id: doc.id,
-          ...product
-        }
-    })
-  })
+export function getCollection() {
+  return productCollection;
 }
 
-export default getProducts
+export async function getProducts() {
+  const docRef = await productCollection.get();
+
+  const products = docRef.docs.map((doc) => {
+    return { id: doc.id, ...doc.data() };
+  });
+  return products;
+}
+
+export async function getProductsById(id) {
+  const docRef = productCollection.doc(id);
+  const product = await docRef
+  .get()
+  .then((doc) => {
+    const producto = doc.data();
+    return { id: doc.id, ...producto };
+  });
+
+  console.log(product);
+  return product;
+}
 
 
-
-// export function getProducts() {
-//   return productCollection.get().then((snapshot) => {
-//     return snapshot.docs.map((doc) => doc.data());
-//   });
-// }
-
-// OBTENER LOS PRODUCTOS POR ID
-
-// export function getProductById(id) {
-//   const productById = productCollection.where("id", "==", parseInt(id));
-//   return productById.get().then((snapshot) => {
-//     return snapshot.docs.map((doc) => doc.data());
-//   });
-// }
-
-// OBTENER TODOS LOS PRODUCTOS
-
-
-
-// export function getProductById(id) {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() =>
-//         fetch (`http://my-json-server.typicode.com/ezequielizquierdo/mockjson/products/${id}`)
-
-//       .then((res) => res.json())
-//       .then((data) => resolve(data))
-//       .catch(err => reject(err)), 200)
-//     })
-// }
-
-// export function getProductByCategory(category) {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() =>
-//         fetch (`http://my-json-server.typicode.com/ezequielizquierdo/mockjson/products?category=${category}`)
-//       .then((res) => res.json())
-//       .then((data) => resolve(data))
-//       .catch(err => reject(err)), 200)
-//     })
-// }
-
-// export function getProducts() {
-//   return new Promise((resolve, reject) => {
-//       setTimeout(() =>
-//       fetch (`http://my-json-server.typicode.com/ezequielizquierdo/mockjson/products`)
-//     .then((res) => res.json())
-//     .then((data) => resolve(data))
-//     .catch(err => reject(err)), 200)
-//   })
-// }
+export function createOrder(buyer, item, total) {
+  return orderCollection
+    .add({
+      buyer: buyer,
+      item: item,
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      total: total,
+    })
+    .then(function (id) {
+      console.log("Confirmación de compra Nº: ", id.id);
+      return id.id;
+    })
+    .catch(function (error) {
+      console.error(error);
+      return "Error procesando pedido";
+    });
+  }  

@@ -32,13 +32,13 @@ export default function AppRouter() {
           <Categories />
         </Route>
 
-        <Route exact path="/sillones">
+        {/* <Route exact path="/sillones">
           <Comingsoon />
         </Route>
 
         <Route exact path="/accesorios">
           <Comingsoon />
-        </Route>
+        </Route> */}
 
         <Route path="/cart">
           <CartPageContainer />

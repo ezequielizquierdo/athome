@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
 import ItemList from "../ItemList/ItemList";
 import styled from "styled-components";
-import getProducts from "../../../Services/post_services";
+import { getProducts } from "../../../Services/post_services";
 
 export default function Categories() {
   const { category } = useParams();

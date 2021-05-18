@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function TextInCover() {
   return (
     <CoverShadow>
-      <Title>RELAX</Title>
+      <Title>Relax</Title>
       <SubTitle>Work Comfortably</SubTitle>
     </CoverShadow>
   );
@@ -15,6 +15,8 @@ const Title = styled.h1`
   display: flex;
   align-items: center;
   color: white;
+  font-family: Dancing Script, cursive;
+
 `;
 
 const CoverShadow = styled.div`
@@ -32,5 +34,6 @@ const SubTitle = styled.h3`
   display: flex;
   align-items: center;
   color: white;
+  font-family: Dancing Script, cursive;
 
 `;

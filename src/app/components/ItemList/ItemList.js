@@ -18,7 +18,6 @@ export default function ItemList({ listProp, handleClick }) {
   );
 }
 
-
 const Frame = styled.ul`
   display: flex;
   gap: .8rem;

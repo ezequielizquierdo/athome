@@ -6,11 +6,28 @@ import CartList from "../../components/CartList/CartList";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
+import OrderConfirmation from "../../components/OrderConfirmation/OrdenConfirmation";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
   },
+  containerconfirmation: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor:"#f5f5f5",
+  },
+  buyerinfo:{
+    display:"flex",
+    padding: "20px",
+    justifyContent: "center",
+    height: "46vh"
+  },
+  cartcontainer:{
+    padding:"20px",
+    width: "60%"
+  }
 }));
 
 export default function CartPageContainer() {
@@ -27,34 +44,30 @@ export default function CartPageContainer() {
 
   return (
     <div>
-      <CategoryTitle>CARRITO DE COMPRAS</CategoryTitle>
+      <CategoryTitle>CONFIRMACION DE COMPRA</CategoryTitle>
 
-      <div>
-        <CartList list={cart} onRemove={handleRemove} />
-      </div>
-      <div>
-        <ButtonContainer>
-          <Button
-            color="#000000"
-            className={classes.button}
-            onClick={() => history.push(`/products`)}
-          >
-              Continuar comprando
-          </Button>
+      <div className={classes.containerconfirmation}>
+        <div className={classes.buyerinfo}>
+          <OrderConfirmation />
+        </div>
 
+        <div className={classes.cartcontainer} >
           <div>
-            <Button
-              variant="contained"
-              size="medium"
-              color="primary"
-              backgroundColor="#20b2aa"
-              className={classes.margin}
-            >
-              Finalizar compra
-            </Button>
+            <CartList list={cart} onRemove={handleRemove} />
           </div>
-        </ButtonContainer>
+        </div>
+        
       </div>
+
+      <ButtonContainer>
+        <Button
+          color="#000000"
+          className={classes.button}
+          onClick={() => history.push(`/products`)}
+        >
+          Continuar comprando
+        </Button>
+      </ButtonContainer>
     </div>
   );
 }
@@ -66,8 +79,6 @@ const CategoryTitle = styled.div`
   background-color: whitesmoke;
   justify-content: center;
   align-items: center;
-  
-
 `;
 
 const ButtonContainer = styled.div`
@@ -75,6 +86,6 @@ const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
-  background-color:whitesmoke;
-  justify-content:flex-end;
+  background-color: whitesmoke;
+  justify-content: flex-end;
 `;

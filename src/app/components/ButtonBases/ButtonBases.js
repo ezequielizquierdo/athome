@@ -9,12 +9,13 @@ import { Button } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    flexWrap: "wrap",
+    // flexWrap: "wrap",
     minWidth: 300,
     width: "100%",
+    gap: ".8rem",
   },
   image: {
-    position: "relative",
+    position: "relative",    
     height: 200,
     [theme.breakpoints.down("xs")]: {
       width: "100% !important", // Overrides inline-style
@@ -74,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
     }px`,
+    fontWeight:"100",
+    fontSize: "0.7rem",
   },
   imageMarked: {
     height: 3,
@@ -100,7 +103,8 @@ export default function ButtonBases() {
             className={classes.image}
             focusVisibleClassName={classes.focusVisible}
             style={{
-              width: "25%",
+              width: "45%",
+
             }}
           >
             <span
@@ -117,7 +121,7 @@ export default function ButtonBases() {
                 color="inherit"
                 className={classes.imageTitle}
               >
-                Escritorios
+                ESCRITORIOS
                 <span className={classes.imageMarked} />
               </Typography>
             </span>
@@ -129,7 +133,7 @@ export default function ButtonBases() {
             className={classes.image}
             focusVisibleClassName={classes.focusVisible}
             style={{
-              width: "25%",
+              width: "45%",
             }}
           >
             <span
@@ -146,19 +150,20 @@ export default function ButtonBases() {
                 color="inherit"
                 className={classes.imageTitle}
               >
-                Sillas
+                SILLAS
                 <span className={classes.imageMarked} />
               </Typography>
             </span>
           </ButtonBase>
 
           <ButtonBase
-            onClick={() => history.push("/sillones")}
+            onClick={() => history.push("/categories/sillones")}
             focusRipple
             className={classes.image}
             focusVisibleClassName={classes.focusVisible}
             style={{
-              width: "25%",
+              width: "45%",
+
             }}
           >
             <span
@@ -175,19 +180,20 @@ export default function ButtonBases() {
                 color="inherit"
                 className={classes.imageTitle}
               >
-                Sillones
+                SILLONES
                 <span className={classes.imageMarked} />
               </Typography>
             </span>
           </ButtonBase>
 
           <ButtonBase
-            onClick={() => history.push("/accesorios")}
+            onClick={() => history.push("/categories/accesorios")}
             focusRipple
             className={classes.image}
             focusVisibleClassName={classes.focusVisible}
             style={{
-              width: "25%",
+              width: "45%",
+
             }}
           >
             <span
@@ -204,7 +210,7 @@ export default function ButtonBases() {
                 color="inherit"
                 className={classes.imageTitle}
               >
-                Accesorios
+                ACCESORIOS
                 <span className={classes.imageMarked} />
               </Typography>
             </span>
@@ -212,7 +218,7 @@ export default function ButtonBases() {
         </CategoryContainer>
       </BoxOfBoxes>
 
-      <div
+      {/* <div
         style={{
           height: "20vh",
           display: "flex",
@@ -231,7 +237,7 @@ export default function ButtonBases() {
             VER TODOS LOS PRODUCTOS
           </Button>
         </EveryProductsContainer>
-      </div>
+      </div> */}
     </>
   );
 }
@@ -249,5 +255,5 @@ const EveryProductsContainer = styled.div`
 
 const BoxOfBoxes = styled.div`
 padding: 10px;
-background-color: antiquewhite;
+background-color: whitesmoke;
 `

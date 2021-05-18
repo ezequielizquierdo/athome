@@ -14,6 +14,7 @@ export default function ItemCount({ finishing }) {
   const [count, setCount] = useState(0);
   const classes = useStyles();
 
+
   useEffect(
     function () {
       console.log("Cambió el count");
@@ -32,6 +33,7 @@ export default function ItemCount({ finishing }) {
   function addtoCart() {
     finishing(count);
   }
+
 
   return (
     <div className="counter">
@@ -68,6 +70,7 @@ export default function ItemCount({ finishing }) {
             Agregar al carrito
           </Button>
         )}
+    
       </div>
     </div>
   );

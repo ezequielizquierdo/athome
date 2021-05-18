@@ -2,27 +2,25 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
-import { useHistory } from "react-router";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 269,
+    width: '30vw',
+    textAlign: 'center'
   },
   media: {
-    height: '45vh',
+    height: '60vh',
     display: 'flex',
+
   },
 });
 
 export default function Item({ product, handleClick }) {
   const classes = useStyles();
-  let history = useHistory();
 
 
   return ( 
@@ -30,8 +28,7 @@ export default function Item({ product, handleClick }) {
       <Card onClick={() => handleClick(product)} className={classes.root}>
         <CardActionArea>
           <CardMedia className={classes.media}>
-            <ImgContainer>
-              <img alt="imagen_producto" src={product.image}></img>
+            <ImgContainer style={{backgroundImage: `url(${product.image})`}}>
             </ImgContainer>
           </CardMedia>
 
@@ -46,11 +43,7 @@ export default function Item({ product, handleClick }) {
           </CardContent>
         </CardActionArea>
 
-        <CardActions>
-          <Button size="small" color="primary" onClick={() => history.push(`/products/${product.id}`)}>
-            Ver detalle
-          </Button>
-        </CardActions>
+        
       </Card>
     </Li>
   );
@@ -58,8 +51,12 @@ export default function Item({ product, handleClick }) {
 
 const Li = styled.div`
   display: flex;
-`;
+  width:30%;
+`
 
 const ImgContainer = styled.div`
-display:flex;
+    display: flex;
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
 `
