@@ -4,34 +4,29 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: '#f5f5f5',
-    borderBottom:"1px solid lightgrey",
-    height: '6vh',
-    
+    backgroundColor: "#f5f5f5",
+    borderBottom: "1px solid lightgrey",
+    height: "6vh",
   },
 
   button: {
-      color: "#000000",
-      letterSpacing: '0.5px',
-      fontSize: '0.6rem',
-
+    color: "#000000",
+    letterSpacing: "0.5px",
+    fontSize: "0.6rem",
   },
 
   group: {
-    display: 'flex',
-    borderRadius: '4px',
+    display: "flex",
+    borderRadius: "4px",
     width: `100%`,
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
-
-
 }));
 
 export default function ButtonsNav() {
@@ -41,16 +36,35 @@ export default function ButtonsNav() {
   return (
     <div className={classes.root}>
       <ButtonGroup
-      className={classes.group}
+        className={classes.group}
         variant="text"
         color="primary"
         aria-label="text primary button group"
       >
-        <Button onClick={() => history.push('/categories/escritorios')} className={classes.button}>Escritorios</Button>
-        <Button onClick={() => history.push('/categories/sillas')} className={classes.button}>Sillas</Button>
-        <Button onClick={() => history.push('/categories/sillones')} className={classes.button}>Sillones</Button>
-        <Button onClick={() => history.push('/categories/accesorios')} className={classes.button}>Accesorios</Button>
-
+        <Button
+          onClick={() => history.push("/categories/escritorios")}
+          className={classes.button}
+        >
+          Escritorios
+        </Button>
+        <Button
+          onClick={() => history.push("/categories/sillas")}
+          className={classes.button}
+        >
+          Sillas
+        </Button>
+        <Button
+          onClick={() => history.push("/categories/sillones")}
+          className={classes.button}
+        >
+          Sillones
+        </Button>
+        <Button
+          onClick={() => history.push("/categories/accesorios")}
+          className={classes.button}
+        >
+          Accesorios
+        </Button>
       </ButtonGroup>
     </div>
   );

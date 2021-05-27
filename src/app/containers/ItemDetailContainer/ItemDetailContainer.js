@@ -19,7 +19,7 @@ export default function ItemDetailContainer() {
     getProductsById(id).then((res) => setProduct(res));
     const timer = setTimeout(() => {
       setIsLoading(true);
-    }, 700);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [id]);
 

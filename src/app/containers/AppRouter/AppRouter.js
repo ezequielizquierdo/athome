@@ -4,7 +4,6 @@ import HomePage from "../homePage/HomePage";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import Footer from "../../components/Footer/Footer";
 import ItemListContainer from "../ItemListContainer/ItemListContainer.jsx";
-import Comingsoon from "../../components/Comingsoon/Comingsoon";
 import Categories from "../../components/Categories/Categories";
 import Navbar from "../../components/Navbar/Navbar";
 import CartPageContainer from "../CartPageContainer/CartPageContainer";
@@ -15,7 +14,6 @@ export default function AppRouter() {
       <Navbar />
 
       <Switch>
-
         <Route exact path="/">
           <HomePage />
         </Route>
@@ -32,18 +30,9 @@ export default function AppRouter() {
           <Categories />
         </Route>
 
-        {/* <Route exact path="/sillones">
-          <Comingsoon />
-        </Route>
-
-        <Route exact path="/accesorios">
-          <Comingsoon />
-        </Route> */}
-
         <Route path="/cart">
           <CartPageContainer />
         </Route>
-
       </Switch>
 
       <Footer />

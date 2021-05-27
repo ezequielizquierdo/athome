@@ -5,14 +5,13 @@ import CartWidget from "../NavbarComponents/CartWidget/CartWidget";
 import ButtonsNav from "../ButtonsNav/ButtonsNav";
 import MessageInNavbar from "../MessageInNavbar/MessageInNavbar";
 
-
 export default function Navbar() {
   return (
     <div className="navbar_container">
       <div>
-        <MessageInNavbar/>
+        <MessageInNavbar />
       </div>
-      
+
       <div className="block">
         <div></div>
         <Logo />

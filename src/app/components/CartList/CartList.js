@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   table: {
     minWidth: 700,
-    padding:"20px"
+    padding: "20px",
   },
   container: {
     padding: 20,
@@ -27,15 +27,21 @@ const useStyles = makeStyles({
   },
   root: {
     textAlign: "center",
+    height: "10vh",
+  },
+  buttonDel: {
+    backgroundColor: "#E05070",
+    color: "#ffffff",
+    "&:hover": {
+      backgroundColor: "#d04a68",
+    },
   },
 });
 
-export default function CartList({ list }) {
+export default function CartList() {
+  const { cart, clearCart, totalPrice } = useContext(CartContext);
   const classes = useStyles();
 
-  const { cart, clearCart, totalPrice } = useContext(CartContext);
-  console.log(cart); //para test
-  // console.log(cart[0].cantidad) //para test
   return (
     <>
       <TableContainer component={Paper}>
@@ -44,7 +50,6 @@ export default function CartList({ list }) {
             <TableHead>
               <TableRow>
                 <TableCell align="center">Vista Previa</TableCell>
-                {/* <TableCell align="right">Categoria</TableCell> */}
                 <TableCell align="center">Titulo</TableCell>
                 <TableCell align="center">Cantidad</TableCell>
                 <TableCell align="center">Eliminar</TableCell>
@@ -60,11 +65,14 @@ export default function CartList({ list }) {
 
             <tfoot>
               {cart.length === 0 ? (
-                <tr id="footer-carrito">
+                <tr id="footer-cart">
                   <th className="empty-cart" scope="row" colSpan="5">
                     <EmptyCart>
-                    <h3>Creo que olvidaste agregar productos... </h3>
-                    <div>Tu carrito está vacio. <Link to={`/products`}>Segui comprando.</Link></div>
+                      <h3>Creo que olvidaste agregar productos... </h3>
+                      <div>
+                        Tu carrito está vacio.
+                        <Link to={`/products`}>Segui comprando.</Link>
+                      </div>
                     </EmptyCart>
                   </th>
                 </tr>
@@ -72,14 +80,12 @@ export default function CartList({ list }) {
                 <tr className={classes.root}>
                   <td></td>
                   <td></td>
-
                   <td align="center">
                     <Button
                       variant="contained"
-                      color="secondary"
                       id="vaciar-carrito"
                       onClick={clearCart}
-                      className={classes.button}
+                      className={classes.buttonDel}
                       startIcon={<DeleteIcon />}
                     >
                       Vaciar Carrito
@@ -104,7 +110,6 @@ export default function CartList({ list }) {
 const EmptyCart = styled.div`
   display: flex;
   flex-direction: column;
-  margin:.8rem;
-  gap:.8rem;
-
+  margin: 0.8rem;
+  gap: 0.8rem;
 `;

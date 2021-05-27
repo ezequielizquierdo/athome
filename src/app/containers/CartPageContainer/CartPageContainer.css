@@ -47,9 +47,8 @@
 
 .form-title{
     text-align: center;
-    font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 1rem;
+    font-size: 0.875rem;
 }
 
 .check-text{

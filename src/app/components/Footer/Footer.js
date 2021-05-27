@@ -4,8 +4,8 @@ import { useHistory } from "react-router";
 import styled from "styled-components";
 import logo from "../../../assets/athome_white.png";
 import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
-import PhoneIcon from '@material-ui/icons/Phone';
-import HomeIcon from '@material-ui/icons/Home';
+import PhoneIcon from "@material-ui/icons/Phone";
+import HomeIcon from "@material-ui/icons/Home";
 
 const useStyles = makeStyles({
   logofooter: {
@@ -78,21 +78,17 @@ export default function Footer() {
           <AlternateEmailIcon fontSize="small"></AlternateEmailIcon>
           <div>contactus@athome.com</div>
         </TextWithIcon>
-       
+
         <TextWithIcon>
           <PhoneIcon fontSize="small"></PhoneIcon>
           <div>011 4502-8371</div>
         </TextWithIcon>
-       
+
         <TextWithIcon>
           <HomeIcon fontSize="small"></HomeIcon>
           <div>Av. Belgrano 1474, CABA</div>
         </TextWithIcon>
-
-
       </FootBoxes>
-
-      {/* <TextInFooter>Copyright 2021 - Proyecto atHome - ReactJS</TextInFooter> */}
     </Foot>
   );
 }
@@ -126,5 +122,5 @@ const BoxesContainer = styled.div`
 const TextWithIcon = styled.div`
   display: flex;
   flex-direction: row;
-  gap:.8rem;
+  gap: 0.8rem;
 `;

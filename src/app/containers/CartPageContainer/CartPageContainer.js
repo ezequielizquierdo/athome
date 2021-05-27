@@ -16,18 +16,18 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor:"#f5f5f5",
+    backgroundColor: "#f5f5f5",
   },
-  buyerinfo:{
-    display:"flex",
+  buyerinfo: {
+    display: "flex",
     padding: "20px",
     justifyContent: "center",
-    height: "46vh"
+    height: "46vh",
   },
-  cartcontainer:{
-    padding:"20px",
-    width: "60%"
-  }
+  cartcontainer: {
+    padding: "20px",
+    width: "60%",
+  },
 }));
 
 export default function CartPageContainer() {
@@ -51,17 +51,15 @@ export default function CartPageContainer() {
           <OrderConfirmation />
         </div>
 
-        <div className={classes.cartcontainer} >
+        <div className={classes.cartcontainer}>
           <div>
             <CartList list={cart} onRemove={handleRemove} />
           </div>
         </div>
-        
       </div>
 
       <ButtonContainer>
         <Button
-          color="#000000"
           className={classes.button}
           onClick={() => history.push(`/products`)}
         >

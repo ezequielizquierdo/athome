@@ -14,14 +14,9 @@ export default function Categories() {
     history.push(`/products/${product.id}`);
   }
 
-  // useEffect(() => {
-  //   getProductByCategory(category)
-  //   .then((products) => setProducts(products));
-  // }, [category]);
-
   useEffect(() => {
-    getProducts()
-    .then((res) =>setProducts(
+    getProducts().then((res) =>
+      setProducts(
         res.filter(function (product) {
           return product.category === category;
         })

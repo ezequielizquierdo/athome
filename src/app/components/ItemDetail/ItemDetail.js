@@ -1,10 +1,10 @@
-import { useHistory } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../Context/CartContext";
 import SwipeableTemporaryDrawer from "../Drawer/Drawer";
+import { Animated } from "react-animated-css";
 
 const useStyles = makeStyles({
   img: {
@@ -16,26 +16,24 @@ const useStyles = makeStyles({
     border: "0.1px solid #d3d3d3",
     boxShadow: "0px 3px 1px -2px rgb(0 0 0 / 20%)",
     width: "12vw",
+    "&:hover": {
+      backgroundColor: "#de7676",
+    },
   },
 });
 
 export default function ItemDetail({ product }) {
   const { addToCart } = useContext(CartContext);
   const [show, setShow] = useState(true);
-
   let cantidadCompra;
 
   const classes = useStyles();
-
-  const history = useHistory();
 
   function onAdd(cantidad) {
     setShow({
       hidden: true,
     });
     cantidadCompra = cantidad;
-    console.log(cantidadCompra);
-
     productSelected();
   }
 
@@ -49,56 +47,42 @@ export default function ItemDetail({ product }) {
       description: product.description,
       image: product.image,
     };
-    console.log(newItem);
     addToCart(newItem);
   }
 
   return (
     <>
-      <Container>
-        <ContainerImg>
-          <Img>
-            <img
-              src={product.image}
-              alt="imageproduct"
-              className={classes.img}
-            />
-          </Img>
-        </ContainerImg>
+      <Animated animationIn="fadeIn">
+        <Container>
+          <ContainerImg>
+            <Img>
+              <img
+                src={product.image}
+                alt="imageproduct"
+                className={classes.img}
+              />
+            </Img>
+          </ContainerImg>
 
-        <DetailContainer>
-          <Title>{product.title} </Title>
-          <Price>$ {product.price} </Price>
-          <Description>{product.description}</Description>
+          <DetailContainer>
+            <Title>{product.title} </Title>
+            <Price>$ {product.price} </Price>
+            <Description>{product.description}</Description>
 
-          <ItemCount finishing={onAdd}></ItemCount>
-
-          <BtnHidden>
-            <button
-              className={classes.oculto}
-              hidden={!show.hidden}
-              id="button-finishing"
-              type="button"
-              variant="outlined"
-            >
-              <SwipeableTemporaryDrawer></SwipeableTemporaryDrawer>
-            </button>
-          </BtnHidden>
-
-          {/* <BtnHidden>
-            <button
-              className={classes.oculto}
-              hidden={!show.hidden}
-              id="button-finishing"
-              type="button"
-              variant="outlined"
-              onClick={() => history.push(`/cart`)}
-            >
-              VER CARRITO
-            </button>
-          </BtnHidden> */}
-        </DetailContainer>
-      </Container>
+            <ItemCount finishing={onAdd}></ItemCount>
+            <BtnHidden>
+              <button
+                className={classes.oculto}
+                hidden={!show.hidden}
+                id="button-finishing"
+                variant="outlined"
+              >
+                <SwipeableTemporaryDrawer></SwipeableTemporaryDrawer>
+              </button>
+            </BtnHidden>
+          </DetailContainer>
+        </Container>
+      </Animated>
     </>
   );
 }
@@ -142,7 +126,7 @@ const Description = styled.div`
   align-items: center;
   padding-left: 20px;
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: justify;
   white-space: pre-wrap;
 `;

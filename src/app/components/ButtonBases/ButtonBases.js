@@ -4,21 +4,19 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 import { useHistory } from "react-router";
-import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    // flexWrap: "wrap",
     minWidth: 300,
     width: "100%",
     gap: ".8rem",
   },
   image: {
-    position: "relative",    
+    position: "relative",
     height: 200,
     [theme.breakpoints.down("xs")]: {
-      width: "100% !important", // Overrides inline-style
+      width: "100% !important",
       height: 100,
     },
     "&:hover, &$focusVisible": {
@@ -75,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
     }px`,
-    fontWeight:"100",
+    fontWeight: "100",
     fontSize: "0.7rem",
   },
   imageMarked: {
@@ -104,7 +102,6 @@ export default function ButtonBases() {
             focusVisibleClassName={classes.focusVisible}
             style={{
               width: "45%",
-
             }}
           >
             <span
@@ -163,7 +160,6 @@ export default function ButtonBases() {
             focusVisibleClassName={classes.focusVisible}
             style={{
               width: "45%",
-
             }}
           >
             <span
@@ -193,7 +189,6 @@ export default function ButtonBases() {
             focusVisibleClassName={classes.focusVisible}
             style={{
               width: "45%",
-
             }}
           >
             <span
@@ -217,27 +212,6 @@ export default function ButtonBases() {
           </ButtonBase>
         </CategoryContainer>
       </BoxOfBoxes>
-
-      {/* <div
-        style={{
-          height: "20vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          backgroundColor: "#f5f5f5"
-        }}
-      >
-        <EveryProductsContainer>
-          <Button
-            onClick={() => history.push("/products")}
-            variant="contained"
-            size="small"
-            className={classes.margin}
-          >
-            VER TODOS LOS PRODUCTOS
-          </Button>
-        </EveryProductsContainer>
-      </div> */}
     </>
   );
 }
@@ -247,13 +221,7 @@ const CategoryContainer = styled.div`
   flex-direction: row;
 `;
 
-const EveryProductsContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-`;
-
 const BoxOfBoxes = styled.div`
-padding: 10px;
-background-color: whitesmoke;
-`
+  padding: 10px;
+  background-color: whitesmoke;
+`;

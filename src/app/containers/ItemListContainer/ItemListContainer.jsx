@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import ItemList from "../../components/ItemList/ItemList";
 import { useHistory } from "react-router";
-import { getCollection, getProducts } from "../../../Services/post_services";
+import { getProducts } from "../../../Services/post_services";
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
@@ -14,21 +14,8 @@ export default function ItemListContainer() {
   }
 
   useEffect(() => {
-    getProducts()
-    .then((products) => setProducts(products));
+    getProducts().then((products) => setProducts(products));
   }, []);
-
-// useEffect(() => {
-//   const unsuscribe = getCollection().onSnapshot(onSnapshot => {
-//     const productResponse = snapshot.docs.map(getDocDataAndId)
-//     setProducts(productResponse)
-//   })
-//   return() => {
-//     unsuscribe
-//   }
-// }
-// )
-
 
   return (
     <>

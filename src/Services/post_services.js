@@ -6,7 +6,6 @@ import 'firebase/firestore';
 const productCollection = database.collection("products");
 const orderCollection = database.collection("order");
 
-
 export function getCollection() {
   return productCollection;
 }
@@ -32,7 +31,6 @@ export async function getProductsById(id) {
   console.log(product);
   return product;
 }
-
 
 export function createOrder(buyer, item, total) {
   return orderCollection
