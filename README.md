@@ -8,6 +8,12 @@
 > 
 > ✨ y con un toque de diseño.✨
 
+
+
+### Vista previa de la funcionalidad del sitio -> [DEMO](https://drive.google.com/file/d/16a-t1e0JEl1y88zFWy2onqX0b9_NlM3f/view?usp=sharing) ###
+
+
+
 # Composición de la plataforma. Contenido funcional.
 
 ## Tech:
